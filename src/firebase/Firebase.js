@@ -1,7 +1,10 @@
+/* eslint-disable no-undef */
 
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getDatabase, ref, remove, set, update,get,onValue,on ,off,push, child} from "firebase/database";
+import { getAuth,GoogleAuthProvider } from 'firebase/auth'
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyDilkDqxacvmOa2lEDNxOl5Q_dpAA9dCh4",
@@ -17,7 +20,11 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
-export{db,ref, remove, set, update,get,onValue,off,push, child };
+const auth = getAuth();
+const googleAuthProvider = new GoogleAuthProvider();
+export{db,ref, remove, set, update,get,onValue,off,push, child,auth, googleAuthProvider};
+// export const auth = getAuth(app)
+
 
 
 // get(ref(db,'expenses'),"Value")
