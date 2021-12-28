@@ -2,6 +2,7 @@ import moment from 'moment';
 
 // Get visible expenses
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default (expenses, { text, sortBy, startDate, endDate }) => {
   return expenses.filter((expense) => {
     const createdAtMoment = moment(expense.createdAt);
